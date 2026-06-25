@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join AJAY as a Team Leader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#FFF7ED',
+                            100: '#FFEDD5',
+                            200: '#FED7AA',
+                            300: '#FDBA74',
+                            400: '#FB923C',
+                            500: '#F97316',
+                            600: '#EA580C',
+                            700: '#C2410C',
+                            800: '#9A3412',
+                            900: '#7C2D12',
+                        },
+                        warm: {
+                            50: '#FFFAF5',
+                            100: '#FFF3E8',
+                            200: '#FFE4CC',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                background: linear-gradient(135deg, #F97316 0%, #EA580C 50%, #C2410C 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .card-shadow {
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            }
+            .card-shadow-hover {
+                box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.1), 0 8px 10px -6px rgba(249, 115, 22, 0.1);
+            }
+            .bg-gradient-warm {
+                background: linear-gradient(180deg, #FFFAF5 0%, #FFFFFF 100%);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-gray-900 antialiased">
+    <!-- Main Content -->
+    <div id="main-content" class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="bg-gradient-warm pt-20 pb-16 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-8">
+                    <span class="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
+                    Now Hiring Across India
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    <span class="text-gradient">Join AJAY</span> as a Team Leader
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 font-medium">
+                    Work Online & Offline — Earn <span class="text-primary-600 font-semibold">₹80,000+</span> per Month
+                </p>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="py-16 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-warm-50 rounded-3xl p-8 md:p-12 card-shadow">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6">
+                        AJAY is hiring Team Leaders across India
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        This is a <strong>serious role</strong> for people who can bring others — both online and offline — and guide them to get started on our platform.
+                    </p>
+                    <div class="bg-primary-50 border-l-4 border-primary-500 p-6 rounded-r-xl">
+                        <p class="text-lg font-semibold text-primary-900 mb-2">
+                            Before you apply, please read everything below carefully.
+                        </p>
+                        <p class="text-gray-700">
+                            Only those who understand and meet the requirements should apply.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements Section -->
+        <section class="py-16 px-6 bg-gray-50">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                    Your Three Requirements
+                </h2>
+                <p class="text-gray-600 text-center mb-12 text-lg">
+                    Meet all three, and you're on your way to ₹80,000+ per month
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Requirement 1 -->
+                    <div class="bg-white rounded-2xl p-8 card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-primary-600">1</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Personal Activity Target</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">•</span>
+                                <span>Make your own daily purchases on AJAY totaling <strong>₹30,000</strong>.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">•</span>
+                                <span>You earn <strong class="text-primary-600">3.5% per transaction</strong> as a platform reward.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">•</span>
+                                <span>Monthly total personal purchases must reach <strong>₹900,000</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Requirement 2 -->
+                    <div class="bg-white rounded-2xl p-8 card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-primary-600">2</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Recruitment Target</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">•</span>
+                                <span>Invite <strong>1-3 new users</strong> to register on AJAY every day.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">•</span>
+                                <span>Help them become active users.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">•</span>
+                                <span>Minimum <strong class="text-primary-600">50 new registered users</strong> per month.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Requirement 3 -->
+                    <div class="bg-white rounded-2xl p-8 card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-primary-600">3</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Team Performance Target</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">•</span>
+                                <span>When your team's total daily activity reaches <strong>₹200,000</strong>, you unlock an <strong class="text-primary-600">extra 0.5% reward</strong>.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">•</span>
+                                <span>This bonus is paid <strong>daily up to ₹1,000</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Income Breakdown Section -->
+        <section class="py-16 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                    Your Monthly Income Breakdown
+                </h2>
+                <p class="text-gray-600 text-center mb-12 text-lg">
+                    When you meet all three requirements above, here's what you earn
+                </p>
+
+                <div class="bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl p-8 md:p-12 text-white">
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-6">
+                            <p class="text-primary-100 text-sm font-medium mb-2">💰 Base Salary</p>
+                            <p class="text-3xl font-bold">₹20,000</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-6">
+                            <p class="text-primary-100 text-sm font-medium mb-2">💰 Personal Transaction Reward</p>
+                            <p class="text-3xl font-bold">₹31,500</p>
+                            <p class="text-primary-200 text-sm mt-1">3.5% of ₹900,000</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-6">
+                            <p class="text-primary-100 text-sm font-medium mb-2">💰 Team Bonus (0.5%)</p>
+                            <p class="text-3xl font-bold">Up to ₹30,000</p>
+                            <p class="text-primary-200 text-sm mt-1">Up to ₹1,000/day</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-6">
+                            <p class="text-primary-100 text-sm font-medium mb-2">💰 New User Recruitment Bonus</p>
+                            <p class="text-3xl font-bold">+ Extra</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t border-white/20 pt-8">
+                        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                            <div>
+                                <p class="text-primary-100 text-lg font-medium">Total Estimated Monthly Income</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-5xl md:text-6xl font-black">₹80,000+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form Section -->
+        <section class="py-16 px-6 bg-gray-50">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Apply as a Team Leader — AJAY
+                    </h2>
+                    <p class="text-gray-600 text-lg">
+                        Answer every question carefully. <strong class="text-gray-800">Incomplete or careless applications will be ignored.</strong>
+                    </p>
+                </div>
+
+                <form id="application-form" class="bg-white rounded-3xl p-8 md:p-10 card-shadow">
+                    <!-- Question 1 -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-semibold mb-3">
+                            1. Full Name <span class="text-primary-500">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            required
+                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all"
+                            placeholder="Enter your full name"
+                        >
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-semibold mb-4">
+                            2. Have you read and understood the three requirements? <span class="text-primary-500">*</span>
+                        </label>
+                        <div class="space-y-3">
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="radio" name="understoodRequirements" value="yes" required class="mt-1 mr-4 w-5 h-5 text-primary-600">
+                                <div>
+                                    <p class="font-medium">Yes, I understand all three requirements</p>
+                                </div>
+                            </label>
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="radio" name="understoodRequirements" value="no" required class="mt-1 mr-4 w-5 h-5 text-primary-600">
+                                <div>
+                                    <p class="font-medium">No, I have questions</p>
+                                    <p class="text-sm text-gray-500">(your application will be paused)</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-semibold mb-3">
+                            3. City & State <span class="text-primary-500">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="cityState" 
+                            required
+                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all"
+                            placeholder="e.g., Mumbai, Maharashtra"
+                        >
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-semibold mb-3">
+                            4. Tell us about yourself <span class="text-primary-500">*</span>
+                        </label>
+                        <textarea 
+                            id="aboutYourself" 
+                            rows="5" 
+                            required
+                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all resize-none"
+                            placeholder="Describe your background, any experience leading teams or organizing people, and why you're interested in this role. Write at least 3-4 sentences."
+                        ></textarea>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-semibold mb-4">
+                            5. Please confirm each requirement by selecting it <span class="text-primary-500">*</span>
+                        </label>
+                        <p class="text-gray-500 mb-4 text-sm">Select all that apply</p>
+                        <div class="space-y-3">
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="checkbox" name="confirmRequirements" value="personal-purchases" class="mt-1 mr-4 w-5 h-5 text-primary-600 rounded">
+                                <span>I understand I must make my own daily purchases totaling ₹30,000 on AJAY</span>
+                            </label>
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="checkbox" name="confirmRequirements" value="recruitment" class="mt-1 mr-4 w-5 h-5 text-primary-600 rounded">
+                                <span>I understand I must recruit 1-3 new users daily, minimum 50 per month</span>
+                            </label>
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="checkbox" name="confirmRequirements" value="team-bonus" class="mt-1 mr-4 w-5 h-5 text-primary-600 rounded">
+                                <span>I understand my team's daily activity must reach ₹200,000 to unlock the 0.5% bonus</span>
+                            </label>
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="checkbox" name="confirmRequirements" value="bonus-cap" class="mt-1 mr-4 w-5 h-5 text-primary-600 rounded">
+                                <span>I understand the daily 0.5% bonus is capped at ₹1,000</span>
+                            </label>
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="checkbox" name="confirmRequirements" value="income-target" class="mt-1 mr-4 w-5 h-5 text-primary-600 rounded">
+                                <span>I understand my monthly income target is ₹80,000+ only if ALL requirements are met</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-semibold mb-4">
+                            6. How many people can you realistically bring to AJAY in your first month? <span class="text-primary-500">*</span>
+                        </label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all text-center">
+                                <input type="radio" name="peopleCount" value="50-70" required class="sr-only peer">
+                                <span class="font-semibold peer-checked:text-primary-600">50-70</span>
+                            </label>
+                            <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all text-center">
+                                <input type="radio" name="peopleCount" value="70-100" required class="sr-only peer">
+                                <span class="font-semibold peer-checked:text-primary-600">70-100</span>
+                            </label>
+                            <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all text-center">
+                                <input type="radio" name="peopleCount" value="100-150" required class="sr-only peer">
+                                <span class="font-semibold peer-checked:text-primary-600">100-150</span>
+                            </label>
+                            <label class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all text-center">
+                                <input type="radio" name="peopleCount" value="150+" required class="sr-only peer">
+                                <span class="font-semibold peer-checked:text-primary-600">150+</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-semibold mb-4">
+                            7. How will you find and guide new users? <span class="text-primary-500">*</span>
+                        </label>
+                        <div class="space-y-3">
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="checkbox" name="userAcquisition" value="face-to-face" class="mt-1 mr-4 w-5 h-5 text-primary-600 rounded">
+                                <span>Face-to-face / local community</span>
+                            </label>
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="checkbox" name="userAcquisition" value="online-groups" class="mt-1 mr-4 w-5 h-5 text-primary-600 rounded">
+                                <span>Online groups (WhatsApp, Telegram, etc.)</span>
+                            </label>
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="checkbox" name="userAcquisition" value="both" class="mt-1 mr-4 w-5 h-5 text-primary-600 rounded">
+                                <span>Both equally</span>
+                            </label>
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-all">
+                                <input type="checkbox" name="userAcquisition" value="other" class="mt-1 mr-4 w-5 h-5 text-primary-600 rounded">
+                                <span>Other (please specify in the next question)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 - Phone Number (倒数第二) -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-semibold mb-3">
+                            8. Phone Number <span class="text-primary-500">*</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            required
+                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all"
+                            placeholder="Enter your phone number"
+                        >
+                    </div>
+
+                    <!-- Question 9 - Telegram Contact (最后一个必填) -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-semibold mb-3">
+                            9. Telegram Contact <span class="text-primary-500">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="telegramContact" 
+                            required
+                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all"
+                            placeholder="Enter your Telegram username (e.g., @username) or phone number"
+                        >
+                    </div>
+
+                    <!-- Question 10 - Optional (最后) -->
+                    <div class="mb-10">
+                        <label class="block text-lg font-semibold mb-3">
+                            10. Any other information you'd like us to know?
+                        </label>
+                        <p class="text-gray-500 text-sm mb-3">Optional</p>
+                        <textarea 
+                            id="otherInfo" 
+                            rows="4" 
+                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all resize-none"
+                            placeholder="Anything else you'd like to share..."
+                        ></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        id="submit-btn"
+                        class="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white text-xl font-bold py-5 px-8 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-primary-500/30 active:scale-[0.98]"
+                    >
+                        Submit Application
+                    </button>
+
+                    <!-- Footer text -->
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <p class="text-sm text-gray-500 text-center leading-relaxed">
+                            This is a limited opportunity. Positions are available only in select areas.<br>
+                            AJAY reserves the right to select candidates based on application quality.<br>
+                            By submitting this form, you confirm all information is accurate.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Thank You Page (Hidden by default) -->
+    <div id="thank-you-page" class="min-h-screen hidden">
+        <div class="bg-gradient-warm min-h-screen flex items-center justify-center px-6 py-20">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    Thank you, <span id="thank-you-name" class="text-gradient">Applicant</span>!
+                </h1>
+                
+                <p class="text-xl text-gray-600 mb-10">
+                    Your application has been submitted successfully.
+                </p>
+
+                <div class="bg-white rounded-3xl p-8 md:p-10 card-shadow text-left mb-10">
+                    <h2 class="text-2xl font-bold mb-6 text-center">What happens next</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                                <span class="text-primary-600 font-bold text-sm">1</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-lg">We review your application</p>
+                                <p class="text-gray-600">We review applications within 24 hours.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                                <span class="text-primary-600 font-bold text-sm">2</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-lg">We'll contact you on Telegram</p>
+                                <p class="text-gray-600">If shortlisted, we'll contact you on <strong>Telegram</strong> using the number you provided.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-warm-50 rounded-2xl p-6 mb-10">
+                    <p class="text-gray-700 mb-4">To stay updated and learn more about AJAY:</p>
+                    <a 
+                        href="https://t.me/ajayofficial" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white text-lg font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105"
+                    >
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                        </svg>
+                        Join Our Official Channel
+                    </a>
+                </div>
+
+                <button 
+                    onclick="resetForm()" 
+                    class="text-gray-500 hover:text-gray-700 underline text-sm"
+                >
+                    Submit another application
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== SUPABASE CONFIGURATION ====================
+        const SUPABASE_URL = 'https://mubvymfmeumeiijfdxiy.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_03_xfgaZmqH2VFLVLO159Q_2x30w1NY';
+        const TABLE_NAME = 'applications';
+        
+        // Initialize Supabase (变量名用 supabaseClient，避免和全局的 supabase 对象重名)
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        // ================================================================
+
+        // Form submission handler
+        document.getElementById('application-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Get form data
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const telegramContact = document.getElementById('telegramContact').value;
+            const cityState = document.getElementById('cityState').value;
+            const aboutYourself = document.getElementById('aboutYourself').value;
+            const otherInfo = document.getElementById('otherInfo').value;
+            
+            // Validate required fields
+            const understoodRequirements = document.querySelector('input[name="understoodRequirements"]:checked');
+            const confirmRequirements = Array.from(document.querySelectorAll('input[name="confirmRequirements"]:checked')).map(el => el.value);
+            const peopleCount = document.querySelector('input[name="peopleCount"]:checked');
+            const userAcquisition = Array.from(document.querySelectorAll('input[name="userAcquisition"]:checked')).map(el => el.value);
+            
+            if (!fullName || !phoneNumber || !telegramContact || !cityState || !aboutYourself ||
+                !understoodRequirements || confirmRequirements.length === 0 || 
+                !peopleCount || userAcquisition.length === 0) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">⏳</span> Submitting...';
+
+            try {
+                // Prepare data for Supabase
+                const formData = {
+                    full_name: fullName,
+                    phone_number: phoneNumber,
+                    telegram_contact: telegramContact,
+                    city_state: cityState,
+                    about_yourself: aboutYourself,
+                    understood_requirements: understoodRequirements.value,
+                    confirm_requirements: confirmRequirements,
+                    people_count: peopleCount.value,
+                    user_acquisition: userAcquisition,
+                    other_info: otherInfo,
+                    submitted_at: new Date().toISOString()
+                };
+
+                // Insert into Supabase
+                const { data, error } = await supabaseClient
+                    .from(TABLE_NAME)
+                    .insert([formData]);
+
+                if (error) {
+                    throw error;
+                }
+
+                // Show thank you page
+                document.getElementById('main-content').classList.add('hidden');
+                document.getElementById('thank-you-page').classList.remove('hidden');
+                document.getElementById('thank-you-name').textContent = fullName;
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+
+            } catch (error) {
+                console.error('Submission error:', error);
+                alert('There was an error submitting your application. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+
+        // Reset form function
+        function resetForm() {
+            document.getElementById('application-form').reset();
+            document.getElementById('thank-you-page').classList.add('hidden');
+            document.getElementById('main-content').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        // Add checked state styling for radio/checkbox labels
+        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+            input.addEventListener('change', function() {
+                // For radio buttons in the same group
+                if (this.type === 'radio') {
+                    const name = this.name;
+                    document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                        radio.closest('label').classList.remove('border-primary-500', 'bg-primary-50');
+                        radio.closest('label').classList.add('border-gray-200');
+                    });
+                }
+                
+                // Add/remove checked styling
+                const label = this.closest('label');
+                if (this.checked) {
+                    label.classList.remove('border-gray-200');
+                    label.classList.add('border-primary-500', 'bg-primary-50');
+                } else {
+                    label.classList.remove('border-primary-500', 'bg-primary-50');
+                    label.classList.add('border-gray-200');
+                }
+            });
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

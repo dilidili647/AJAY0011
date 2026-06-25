@@ -1,0 +1,17 @@
+@layer utilities {
+    .text-gradient {
+        background: linear-gradient(135deg, #F97316 0%, #EA580C 50%, #C2410C 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .card-shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+    .card-shadow-hover {
+        box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.1), 0 8px 10px -6px rgba(249, 115, 22, 0.1);
+    }
+    .bg-gradient-warm {
+        background: linear-gradient(180deg, #FFFAF5 0%, #FFFFFF 100%);
+    }
+}
