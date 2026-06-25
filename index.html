@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join AJAY as a Team Leader</title>
+    <!-- 外部资源 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- 引入独立CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Tailwind配置 -->
     <script>
         tailwind.config = {
             theme: {
@@ -39,25 +43,6 @@
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-gradient {
-                background: linear-gradient(135deg, #F97316 0%, #EA580C 50%, #C2410C 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            .card-shadow {
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            }
-            .card-shadow-hover {
-                box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.1), 0 8px 10px -6px rgba(249, 115, 22, 0.1);
-            }
-            .bg-gradient-warm {
-                background: linear-gradient(180deg, #FFFAF5 0%, #FFFFFF 100%);
-            }
-        }
-    </style>
 </head>
 <body class="font-sans bg-white text-gray-900 antialiased">
     <!-- Main Content -->
@@ -379,7 +364,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 8 - Phone Number (倒数第二) -->
+                    <!-- Question 8 - Phone Number 增加实时校验提示 -->
                     <div class="mb-8">
                         <label class="block text-lg font-semibold mb-3">
                             8. Phone Number <span class="text-primary-500">*</span>
@@ -388,12 +373,14 @@
                             type="tel" 
                             id="phoneNumber" 
                             required
+                            oninput="checkPhone(this.value)"
                             class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all"
-                            placeholder="Enter your phone number"
+                            placeholder="Enter 10-digit phone number only"
                         >
+                        <p id="phoneTip" class="text-red-500 text-sm mt-2 hidden">Phone number must be exactly 10 digits, numbers only</p>
                     </div>
 
-                    <!-- Question 9 - Telegram Contact (最后一个必填) -->
+                    <!-- Question 9 - Telegram Contact 增加实时校验提示 -->
                     <div class="mb-8">
                         <label class="block text-lg font-semibold mb-3">
                             9. Telegram Contact <span class="text-primary-500">*</span>
@@ -402,9 +389,11 @@
                             type="text" 
                             id="telegramContact" 
                             required
+                            oninput="checkTg(this.value)"
                             class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all"
-                            placeholder="Enter your Telegram username (e.g., @username) or phone number"
+                            placeholder="Must start with @, e.g. @ajay123"
                         >
+                        <p id="tgTip" class="text-red-500 text-sm mt-2 hidden">Telegram username must start with @ symbol</p>
                     </div>
 
                     <!-- Question 10 - Optional (最后) -->
@@ -512,131 +501,7 @@
         </div>
     </div>
 
-    <script>
-        // ==================== SUPABASE CONFIGURATION ====================
-        const SUPABASE_URL = 'https://mubvymfmeumeiijfdxiy.supabase.co';
-        const SUPABASE_ANON_KEY = 'sb_publishable_03_xfgaZmqH2VFLVLO159Q_2x30w1NY';
-        const TABLE_NAME = 'applications';
-        
-        // Initialize Supabase (变量名用 supabaseClient，避免和全局的 supabase 对象重名)
-        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        // ================================================================
-
-        // Form submission handler
-        document.getElementById('application-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            // Get form data
-            const fullName = document.getElementById('fullName').value;
-            const phoneNumber = document.getElementById('phoneNumber').value;
-            const telegramContact = document.getElementById('telegramContact').value;
-            const cityState = document.getElementById('cityState').value;
-            const aboutYourself = document.getElementById('aboutYourself').value;
-            const otherInfo = document.getElementById('otherInfo').value;
-            
-            // Validate required fields
-            const understoodRequirements = document.querySelector('input[name="understoodRequirements"]:checked');
-            const confirmRequirements = Array.from(document.querySelectorAll('input[name="confirmRequirements"]:checked')).map(el => el.value);
-            const peopleCount = document.querySelector('input[name="peopleCount"]:checked');
-            const userAcquisition = Array.from(document.querySelectorAll('input[name="userAcquisition"]:checked')).map(el => el.value);
-            
-            if (!fullName || !phoneNumber || !telegramContact || !cityState || !aboutYourself ||
-                !understoodRequirements || confirmRequirements.length === 0 || 
-                !peopleCount || userAcquisition.length === 0) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">⏳</span> Submitting...';
-
-            try {
-                // Prepare data for Supabase
-                const formData = {
-                    full_name: fullName,
-                    phone_number: phoneNumber,
-                    telegram_contact: telegramContact,
-                    city_state: cityState,
-                    about_yourself: aboutYourself,
-                    understood_requirements: understoodRequirements.value,
-                    confirm_requirements: confirmRequirements,
-                    people_count: peopleCount.value,
-                    user_acquisition: userAcquisition,
-                    other_info: otherInfo,
-                    submitted_at: new Date().toISOString()
-                };
-
-                // Insert into Supabase
-                const { data, error } = await supabaseClient
-                    .from(TABLE_NAME)
-                    .insert([formData]);
-
-                if (error) {
-                    throw error;
-                }
-
-                // Show thank you page
-                document.getElementById('main-content').classList.add('hidden');
-                document.getElementById('thank-you-page').classList.remove('hidden');
-                document.getElementById('thank-you-name').textContent = fullName;
-                
-                // Scroll to top
-                window.scrollTo(0, 0);
-
-            } catch (error) {
-                console.error('Submission error:', error);
-                alert('There was an error submitting your application. Please try again.');
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-            }
-        });
-
-        // Reset form function
-        function resetForm() {
-            document.getElementById('application-form').reset();
-            document.getElementById('thank-you-page').classList.add('hidden');
-            document.getElementById('main-content').classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
-
-        // Add checked state styling for radio/checkbox labels
-        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
-            input.addEventListener('change', function() {
-                // For radio buttons in the same group
-                if (this.type === 'radio') {
-                    const name = this.name;
-                    document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
-                        radio.closest('label').classList.remove('border-primary-500', 'bg-primary-50');
-                        radio.closest('label').classList.add('border-gray-200');
-                    });
-                }
-                
-                // Add/remove checked styling
-                const label = this.closest('label');
-                if (this.checked) {
-                    label.classList.remove('border-gray-200');
-                    label.classList.add('border-primary-500', 'bg-primary-50');
-                } else {
-                    label.classList.remove('border-primary-500', 'bg-primary-50');
-                    label.classList.add('border-gray-200');
-                }
-            });
-        });
-
-        // Smooth scroll behavior
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+    <!-- 引入独立JS文件 -->
+    <script src="./main.js"></script>
 </body>
 </html>
